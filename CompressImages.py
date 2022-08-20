@@ -7,7 +7,7 @@ class Compress_img:
         self.img_path = img_path
         self.img_name = img_path.split('/')[-1]
 
-    def compress_img_PIL(self, compress_rate=0.4):
+    def compress_img_PIL(self, compress_rate=0.3):
         img = Image.open(self.img_path)
         w, h = img.size
         # 使用resize改变图片分辨率，但是图片内容并不丢失，不是裁剪
@@ -21,7 +21,7 @@ class Compress_img:
 
 if __name__ == '__main__':
     # 输入压缩率
-    rate = eval(input("Please input the compress rate (default:0.4):"))
+    rate = eval(input("Please input the compress rate (default:0.3):"))
 
     for filename in os.listdir(os.getcwd()):
         if (os.path.splitext(filename)[1] == '.png'):   # 过滤png图片
